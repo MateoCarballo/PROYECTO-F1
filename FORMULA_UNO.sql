@@ -38,10 +38,9 @@ CREATE TABLE Circuitos(
 );
 ## hAY CIRCUITOS QUE TIENEN DOS CARRERAS POR ESO NECESITO ESTA TABLA, APARTE POSIBLEMENTE CAMBIE IdCarrera por otro nombre para poder tener tambien las QUALIS aquí
 CREATE TABLE Carrera(
-	IdCarrera			INT	PRIMARY KEY,
-    IdCircuito			INT,
-    FechaCelebración	DATE,
-    FOREIGN KEY (IdCircuito) REFERENCES Circuitos(IdCircuito)
+	IdCarrera			INT,
+    Circuito			INT,
+    FechaCelebración	DATE
 );
 
 CREATE TABLE PosicionesCarrera(
@@ -90,6 +89,12 @@ ADD CONSTRAINT fk_Piloto2_Pilotos
 FOREIGN KEY (Piloto2) 		REFERENCES Pilotos(IdPiloto),
 ADD CONSTRAINT fk_Piloto3_Pilotos
 FOREIGN KEY (PilotoReserva) REFERENCES Pilotos(IdPiloto);
+
+ALTER TABLE Carrera
+ADD CONSTRAINT pk_Carrera
+PRIMARY KEY (IdCarrera),
+ADD CONSTRAINT fk_CircuitoIdCircuito
+FOREIGN KEY (Circuito) REFERENCES Circuitos(IdCircuito);
 
 ALTER TABLE PosicionesCarrera
 ADD CONSTRAINT pk_Compuesta_CarreraPilotoEquipo 
@@ -186,7 +191,7 @@ INSERT INTO PosicionesCarrera (Carrera, Piloto, Equipo, Posicion, Puntos) VALUES
 (1		, 9		, 5		, 9		, 2),  
 (1		, 10	, 5		, 10	, 1);
 
-INSERT INTO Carrera (IdCarrera, IdCircuito, FechaCelebración) VALUES
+INSERT INTO Carrera (IdCarrera, Circuito, FechaCelebración) VALUES
 (1, 1, NULL),
 (2, 2, NULL),
 (3, 3, NULL),
