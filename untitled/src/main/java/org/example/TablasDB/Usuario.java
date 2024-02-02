@@ -6,13 +6,23 @@ public class Usuario {
     private String clave;
     private String alias;
     private String sala;
+    private int puntuacion;
 
-    public Usuario(String idUsuario,String nombre,String clave,String alias,String sala){
+    public Usuario(String idUsuario,String nombre,String clave,String alias,String sala,int puntuacion){
         this.idUsuario=idUsuario;
         this.nombre=nombre;
         this.clave=clave;
         this.alias=alias;
         this.sala=sala;
+        this.puntuacion=puntuacion;
+    }
+
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
     }
 
     public String getIdUsuario() {
