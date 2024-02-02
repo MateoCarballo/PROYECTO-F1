@@ -1,14 +1,14 @@
 DROP DATABASE IF EXISTS temporadaF12024;
 CREATE DATABASE temporadaF12024;
 -- Sin esta instruccion no me dejaba hacer los insert 'SET FOREIGN_KEY_CHECKS=0;'
-
+SET FOREIGN_KEY_CHECKS=0;
 USE temporadaF12024;
 # 	En todas las tablas se puede añadir mas información pero por ahora solo tengo lo más importante.
 CREATE TABLE Pilotos(
-	IdPiloto			INT	PRIMARY KEY,
+	IdPiloto			INT,
     Nombre				VARCHAR(50),
     Apellido			VARCHAR(50),
-	IdEquipo			INT,
+	Equipo				INT,
     NumeroMonoplaza		INT UNIQUE -- Numero que usan en el coche
 );
 /*DEBERIA HACER ESTO?
@@ -22,11 +22,12 @@ CREATE TABLE PilotosEquipos(
 No entiendo bien la ventaja de usar una forma u otra
 */
 CREATE TABLE Equipos(
-	IdEquipo			INT	PRIMARY KEY,
+	IdEquipo			INT,
     Nombre				VARCHAR(100),
     Piloto1				INT,
     Piloto2				INT,
-    PilotoReserva		INT
+    PilotoReserva		INT,
+    INDEX (IdEquipo)
 );
 
 CREATE TABLE Circuitos(
@@ -75,11 +76,14 @@ CREATE TABLE UsuarioSala(
 );
 
 ALTER TABLE Pilotos
-ADD CONSTRAINT fk_Pilotos_Equipos
-FOREIGN KEY		(IdEquipo)	
-REFERENCES	Equipos(IdEquipo);
+ADD CONSTRAINT pk_Pilotos
+PRIMARY KEY (IdPiloto),
+ADD CONSTRAINT fk_EquipoEquipos
+FOREIGN KEY (Equipo) REFERENCES Equipos(IdEquipo);
 
 ALTER TABLE Equipos
+ADD CONSTRAINT pk_Equipos
+PRIMARY KEY (IdEquipo),
 ADD CONSTRAINT fk_Piloto1_Pilotos
 FOREIGN KEY (Piloto1) 		REFERENCES Pilotos(IdPiloto),
 ADD CONSTRAINT fk_Piloto2_Pilotos
@@ -110,7 +114,7 @@ INSERT INTO Equipos (IdEquipo,Nombre,Piloto1,Piloto2,PilotoReserva) VALUES
 (10,'Haas F1 Team',19,20,110);
 
 
-INSERT INTO Pilotos (IdPiloto, Nombre, Apellido, IdEquipo, NumeroMonoplaza) VALUES
+INSERT INTO Pilotos (IdPiloto, Nombre, Apellido, Equipo, NumeroMonoplaza) VALUES
 (1, 'Max', 'Verstappen', 1, 1),-- Red Bull Racing
 (2, 'Sergio', 'Pérez', 1, 11),  
 (101, 'Piloto', 'Reserva', 1, 101),	
