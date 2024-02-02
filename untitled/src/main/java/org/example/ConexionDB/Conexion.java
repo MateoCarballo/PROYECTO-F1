@@ -29,7 +29,6 @@ public class Conexion {
         return singleton;
     }
 
-
     public void abrirConexion(ArrayList<String> nombreColumnas,String query){
         try {
             conexion = DriverManager.getConnection(url,user,password);
@@ -42,24 +41,17 @@ public class Conexion {
 
     }
     public void ejecutarConsulta(ArrayList<String> consulta,String query){
-        /*
-        System.out.println(resultSet.getString("")+" | "+resultSet.getString("Nombre")+" | "+resultSet.getString("Apellido")
-                            +" | "+resultSet.getString("IdEquipo")+" | "+resultSet.getString("NumeroMonoplaza"));
-
-                    }
-         */
-            try {
-                resultSet = statement.executeQuery(query);
-                while(resultSet.next()) {
-                    for (String nombreColumna : consulta) {
-                        System.out.print( resultSet.getString(nombreColumna)+" |");
-                    }
-                    System.out.println(" ");
+        try {
+            resultSet = statement.executeQuery(query);
+            while(resultSet.next()) {
+                for (String nombreColumna : consulta) {
+                    System.out.print( resultSet.getString(nombreColumna)+" |");
                 }
-            } catch (SQLException e) {
-                e.printStackTrace();
+                System.out.println(" ");
             }
-
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     private void cerrarConexion() {
         try {
