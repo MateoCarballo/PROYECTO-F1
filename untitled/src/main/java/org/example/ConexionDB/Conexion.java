@@ -34,15 +34,14 @@ public class Conexion {
         try {
             conexion = DriverManager.getConnection(url,user,password);
             statement = conexion.createStatement();
-            resultSet = statement.executeQuery(query);
-            ejecutarConsulta(nombreColumnas);
+            ejecutarConsulta(nombreColumnas,query);
             cerrarConexion();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
-    public void ejecutarConsulta(ArrayList<String> consulta){
+    public void ejecutarConsulta(ArrayList<String> consulta,String query){
         /*
         System.out.println(resultSet.getString("")+" | "+resultSet.getString("Nombre")+" | "+resultSet.getString("Apellido")
                             +" | "+resultSet.getString("IdEquipo")+" | "+resultSet.getString("NumeroMonoplaza"));
@@ -50,6 +49,7 @@ public class Conexion {
                     }
          */
             try {
+                resultSet = statement.executeQuery(query);
                 while(resultSet.next()) {
                     for (String nombreColumna : consulta) {
                         System.out.print( resultSet.getString(nombreColumna)+" |");

@@ -19,7 +19,7 @@ public class Main {
         columnasTabla.add("IdPiloto");
         columnasTabla.add("Nombre");
         columnasTabla.add("Apellido");
-        columnasTabla.add("IdEquipqo");
+        columnasTabla.add("IdEquipo");
         columnasTabla.add("NumeroMonoplaza");
 
         Conexion con1 = Conexion.singleton(url,user,password);
