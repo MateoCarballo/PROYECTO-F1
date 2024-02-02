@@ -1,12 +1,11 @@
 
 
-java:S1319"nThe type of "nombreColumnas" should be an interface such as "List" rather than the implementation "ArrayList".(¦ Ö´úÿÿÿÿ8å’½ÌÖ1
+java:S1319!"nThe type of "nombreColumnas" should be an interface such as "List" rather than the implementation "ArrayList".(¦ Ö´úÿÿÿÿ8µøÕÌÖ1
 …
-java:S1319$"hThe type of "consulta" should be an interface such as "List" rather than the implementation "ArrayList".(€­€½8å’½ÌÖ1
-3
-java:S1700
-"Rename field "conexion"(¬„õt8æ’½ÌÖ1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›¿êúÿÿÿÿ8æ’½ÌÖ1
-]	java:S125'"<This block of commented-out lines of code should be removed.(öÓÜ½üÿÿÿÿ8ñ’½ÌÖ1
-L	java:S106."+Replace this use of System.out by a logger.(£“Ä¤úÿÿÿÿ8ñ’½ÌÖ1
-L	java:S1060"+Replace this use of System.out by a logger.(ŞÒ—üÿÿÿÿ8ÿÿÂÌÖ1
+java:S1319-"hThe type of "consulta" should be an interface such as "List" rather than the implementation "ArrayList".(€­€½8¶øÕÌÖ1
+9
+java:S1700"Rename field "conexion"(ƒ³òäúÿÿÿÿ8¶øÕÌÖ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›¿êúÿÿÿÿ8¶øÕÌÖ1
+]	java:S1250"<This block of commented-out lines of code should be removed.(öÓÜ½üÿÿÿÿ8ÂøÕÌÖ1
+L	java:S1067"+Replace this use of System.out by a logger.(£“Ä¤úÿÿÿÿ8ÃøÕÌÖ1
+L	java:S1069"+Replace this use of System.out by a logger.(ŞÒ—üÿÿÿÿ8ÃøÕÌÖ1
