@@ -7,6 +7,10 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args){
+        conectarDB();
+    }
+
+    private static void conectarDB() {
         String url = "jdbc:mysql://localhost:3306/temporadaF12024?serverTimezone=UTC";
         String user="root";
         String password="1234ñ!";
@@ -18,7 +22,7 @@ public class Main {
         columnasTabla.add("IdEquipqo");
         columnasTabla.add("NumeroMonoplaza");
 
-        Conexion con1 = new Conexion(url,user,password);
+        Conexion con1 = Conexion.singleton(url,user,password);
         con1.abrirConexion(columnasTabla,query);
     }
 }
