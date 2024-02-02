@@ -50,16 +50,27 @@ CREATE TABLE PosicionesCarrera(
     Puntos				INT
 );
 
+CREATE TABLE Usuarios(
+	IdUsuario			INT,
+	Nombre				VARCHAR(50),
+    Clave				VARCHAR(50),
+    Alias				VARCHAR(15),
+    Sala				INT				
+);
 
-
-
-
+CREATE TABLE Salas(
+	IdSala			INT,
+    Nombre			VARCHAR(50),
+    Usuario1		INT,
+    Usuario2		INT,
+	Usuario3		INT,
+	Usuario4		INT
+    );
 
 ALTER TABLE Pilotos
 ADD CONSTRAINT fk_Pilotos_Equipos
 FOREIGN KEY		(IdEquipo)	
 REFERENCES	Equipos(IdEquipo);
-
 
 ALTER TABLE Equipos
 ADD CONSTRAINT fk_Piloto1_Pilotos
@@ -78,6 +89,24 @@ ADD CONSTRAINT fk_Equipo_IdEquipo
 FOREIGN KEY (Equipo) 		REFERENCES Equipos(IdEquipo),
 ADD CONSTRAINT fk_Carrera_IdCarrera
 FOREIGN KEY (Carrera) 		REFERENCES Carrera(IdCarrera);
+
+ALTER TABLE Usuarios
+ADD CONSTRAINT	pk_Usuarios 	
+PRIMARY KEY (IdUsuario),
+ADD CONSTRAINT	fk_Sala_IdSala	
+FOREIGN KEY (Sala) REFERENCES Salas(IdSala);
+
+ALTER TABLE Salas
+ADD CONSTRAINT	pk_Salas
+PRIMARY KEY	(IdSala),
+ADD CONSTRAINT fk_Usuario1_IdUsuario
+FOREIGN KEY (Usuario1) REFERENCES Usuarios(IdUsuario),
+ADD CONSTRAINT fk_Usuario2_IdUsuario
+FOREIGN KEY (Usuario2) REFERENCES Usuarios(IdUsuario), 
+ADD CONSTRAINT fk_Usuario3_IdUsuario
+FOREIGN KEY (Usuario3) REFERENCES Usuarios(IdUsuario), 
+ADD CONSTRAINT fk_Usuario4_IdUsuario
+FOREIGN KEY (Usuario4) REFERENCES Usuarios(IdUsuario); 
 
 INSERT INTO Equipos (IdEquipo,Nombre,Piloto1,Piloto2,PilotoReserva) VALUES 
 (1,'Red Bull Racing Honda',1,2,101),
