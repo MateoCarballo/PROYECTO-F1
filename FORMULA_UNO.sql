@@ -84,7 +84,7 @@ ALTER TABLE PosicionesCarrera
 ADD CONSTRAINT pk_Compuesta_CarreraPilotoEquipo 
 PRIMARY KEY (Carrera,Piloto, Equipo),
 ADD CONSTRAINT fk_Piloto_IdPiloto
-FOREIGN KEY (Piloto) 		REFERENCES Pilotos(IdPiloto),
+FOREIGN KEY (Piloto) 		REFERENCES Pilotos(IdPiloto),	
 ADD CONSTRAINT fk_Equipo_IdEquipo
 FOREIGN KEY (Equipo) 		REFERENCES Equipos(IdEquipo),
 ADD CONSTRAINT fk_Carrera_IdCarrera

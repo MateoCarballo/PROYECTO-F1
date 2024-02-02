@@ -1,0 +1,19 @@
+
+>
+java:S3010"!Remove this assignment of "conn".(ªô–8ÔÏÊÖ1
+X
+java:S1117"6Rename "url" which hides the field declared at line 9.(‘Ê¤¿úÿÿÿÿ8ÔÏÊÖ1
+X
+java:S1117";Rename "usuario" which hides the field declared at line 10.(§ç°–8ÕÏÊÖ1
+[
+java:S1117"9Rename "clave" which hides the field declared at line 11.(ü„Å¿üÿÿÿÿ8ÕÏÊÖ1
+S
+java:S6437"6Revoke and change this password, as it is compromised.(ªô–8ÖÏÊÖ1
+L	java:S106"+Replace this use of System.out by a logger.(äÜ˜¥ıÿÿÿÿ8ØÏÊÖ1
+I
+java:S1068	"'Remove this unused "url" private field.(«Œåùÿÿÿÿ8ÙÏÊÖ1
+M
+java:S1068
+"+Remove this unused "usuario" private field.(õ¢Ä¹ÿÿÿÿÿ8ÚÏÊÖ1
+K
+java:S1068")Remove this unused "clave" private field.(‘äª¢ÿÿÿÿÿ8ÚÏÊÖ1
