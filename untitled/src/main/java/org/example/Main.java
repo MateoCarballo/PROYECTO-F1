@@ -1,12 +1,19 @@
 package org.example;
 
 import org.example.ConexionDB.Conexion;
+import org.example.TablasDB.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args){
+        HashMap<Integer, Circuito> listadoCircuitos = new HashMap<Integer, Circuito>();
+        HashMap<Integer, Equipo> listadoEquipos = new HashMap<Integer, Equipo>();
+        HashMap<Integer, Piloto> listadoPilotos = new HashMap<Integer, Piloto>();
+        HashMap<Integer, Sala> listadoSalas  = new HashMap<Integer, Sala>();
+        HashMap<Integer, Usuario> listadoUsuarios  = new HashMap<Integer, Usuario>();
         conectarDB();
     }
 

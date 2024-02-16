@@ -106,6 +106,7 @@ FOREIGN KEY (Equipo) 		REFERENCES Equipos(IdEquipo),
 ADD CONSTRAINT fk_Carrera_IdCarrera
 FOREIGN KEY (Carrera) 		REFERENCES Carrera(IdCarrera);
 
+
 INSERT INTO Equipos (IdEquipo,Nombre,Piloto1,Piloto2,PilotoReserva) VALUES 
 (1,'Red Bull Racing Honda',1,2,101),
 (2,'Mercedes-AMG Petronas Formula One Team',3,4,102),

@@ -1,9 +1,9 @@
 package org.example.TablasDB;
 
 public class Sala {
-    //TODO como crear las salas para jugar, deberia usar algun tipo de lista para almacenar los usuarios?
     private String idSala;
     private String nombre;
+    //TODO como crear las salas para jugar, deberia usar algun tipo de lista para almacenar los usuarios?
     private String usuario1;
     private String usuario2;
     private String usuario3;

@@ -13,6 +13,7 @@ public class Usuario {
         this.nombre=nombre;
         this.clave=clave;
         this.alias=alias;
+        //TODO pendiente de permitir estar en varia salas y que esto sea algun tipo de lista
         this.sala=sala;
         this.puntuacion=puntuacion;
     }
