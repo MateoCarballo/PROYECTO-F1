@@ -33,14 +33,14 @@ public class Conexion {
         try {
             conexion = DriverManager.getConnection(url,user,password);
             statement = conexion.createStatement();
-            ejecutarConsulta(nombreColumnas,query);
+            ejecutarConsultaSelect(nombreColumnas,query);
             cerrarConexion();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
-    public void ejecutarConsulta(ArrayList<String> consulta,String query){
+    public void ejecutarConsultaSelect(ArrayList<String> consulta,String query){
         try {
             resultSet = statement.executeQuery(query);
             while(resultSet.next()) {

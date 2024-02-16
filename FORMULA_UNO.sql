@@ -21,9 +21,13 @@ CREATE TABLE PilotosEquipos(
 
 No entiendo bien la ventaja de usar una forma u otra
 */
+
+#Mi idea es tener al jefe de equipo con un ID unico y con nombre y apellidos
+
 CREATE TABLE Equipos(
 	IdEquipo			INT,
     Nombre				VARCHAR(100),
+    JefeDeEquipo        INT,
     Piloto1				INT,
     Piloto2				INT,
     PilotoReserva		INT,
@@ -36,7 +40,7 @@ CREATE TABLE Circuitos(
     Longitud			FLOAT, -- Kilometros
     Ubicacion			VARCHAR(50)
 );
-## hAY CIRCUITOS QUE TIENEN DOS CARRERAS POR ESO NECESITO ESTA TABLA, APARTE POSIBLEMENTE CAMBIE IdCarrera por otro nombre para poder tener tambien las QUALIS aquí
+## HAY CIRCUITOS QUE TIENEN DOS CARRERAS POR ESO NECESITO ESTA TABLA, APARTE POSIBLEMENTE CAMBIE IdCarrera por otro nombre para poder tener tambien las QUALIS aquí
 CREATE TABLE Carrera(
 	IdCarrera			INT,
     Circuito			INT,
